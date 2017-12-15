@@ -22,8 +22,7 @@ RUN apt-get update && apt-get upgrade \
     python-wstool \
     python-rosinstall \
     build-essential \
-    cmake \
-    && rm -rf /var/lib/apt/lists/*
+    cmake
 
 # setup environment
 ENV LANG C.UTF-8
@@ -47,9 +46,6 @@ RUN mkdir -p ~/ros_catkin_ws/external_src \
     && cmake . \
     && make \
     && make install
-
-# Видимо где-то обновляется репозиторий и пакеты не могут найтись в следующем RUN
-RUN apt-get update && apt-get upgrade
 
 # Resolving Dependencies with rosdep
 RUN cd ~/ros_catkin_ws \
