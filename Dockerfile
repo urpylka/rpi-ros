@@ -3,6 +3,8 @@
 
 FROM resin/rpi-raspbian:stretch-20171206 
 
+RUN echo "Хорихоцский я оставлю тебя здесь"
+
 # less IIu3ДeTb
 ENV DEBIAN_FRONTEND noninteractive
 
